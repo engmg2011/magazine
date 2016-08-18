@@ -1,0 +1,115 @@
+body{
+	direction:rtl;
+	background:#d3d3d3;
+}
+body *{
+	font-family:'DroidKufi-Regular';
+}
+*{
+	padding:0;
+	margin:0;
+}
+#one{
+	padding-top:60px; 
+}
+.ui-header{
+	position: fixed;
+    margin-top: -60px;
+    width: 100%;
+}
+a{ 
+	text-decoration:none;
+}
+.ui-header{
+	background:#fff;
+}
+.ui-page-theme-a{
+	background:#d3d3d3;
+}
+.ui-btn{
+	background:#fff;
+}
+#My_data{
+	direction:rtl;
+	list-style:none;
+	line-height:30px;
+	font-size:18px;	
+}
+.menu{ 
+	width:100%; 
+} 
+.menu td{
+	text-align:center;
+}
+.logo{
+	width:50%;
+	text-align:center;
+}
+.logo img{
+	max-width:100%;
+	max-height:100%;
+}
+.ui-header .fa{
+	color:#d3d3d3;
+	font-size:30px;
+	font-weight:400 !important;
+}
+.ui-header .fa{
+	color:#d3d3d3;
+	font-size:30px;
+	font-weight:400 !important;
+} 
+.content_item{
+	background:#fff;
+	margin:10px 0;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.content_item img{
+	width:100%; 
+}
+.content_item .title{
+	font-size: 14px;
+	background:#fff;
+	color:#383838;
+	padding:2px 10px;
+	font-weight:800;
+	line-height: 20px;
+}
+.content_item .description{
+	margin-top:12px;
+	font-size:12px;
+	padding:2px 10px;
+	color:#383838;
+
+}
+.content_item .time{
+	margin-top: 0;
+	font-size:8px;
+	padding: 0px 10px 0;
+	color:#383838;
+}
+.imageSpin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.pdf-title{
+	font-size:20px !important;
+	padding:20px 10px !important ;
+}
+
+.pdf-title i{
+	color:#be9f57;
+}
