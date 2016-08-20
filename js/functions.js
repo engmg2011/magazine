@@ -12,18 +12,21 @@ function printData(){
 		obj = JSON && JSON.parse($xml) || $.parseJSON($xml);  
 	    
 		obj.forEach(function(item){  
-			//console.log(item.title[0]);
-			console.log(item.link[0]);
+			title = item.title[0];
+			titlefree =  title.replace(/'/g, "");; 
+			titlefree =  title.replace(/"/g, "");; 
+			//console.log(titlefree);
+			//console.log(item.link[0]);
 			$('#My_data').append('<div class="content_item">\
 				<div class="img">\
-					<a href="#popup" onclick="openNews(\''+item.link[0]+'\' ,\''+item.title[0]+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+					<a  onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
 						<img src="'+item.image[0]+'" />\
 					</a>\
 				</div>\
-				<a href="#popup" onclick="openNews(\''+item.link[0]+'\' ,\''+item.title[0]+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
-						<h3 class="title">'+item.title[0]+'</h3>\
+				<a onclick="openNews(\''+item.link[0]+'\' ,\'sssssssss\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+						<h3 class="title">'+titlefree+'</h3>\
 				</a>\
-				<!--h4 class="description">'+item.title[0]+'</h4-->\
+				<!--h4 class="description">'+titlefree+'</h4-->\
 				<h6 class="time">'+item.pubDate[0]+'</h6>\
 			</div> ');
 		}); 
@@ -46,16 +49,20 @@ function printPDFData(){
 			itemname = item.replace(".pdf", "");
 			//$('#My_data').append(item);
 			$('#My_data').append('<div class="content_item">\
-				<a href="http://mgovmagazine.com/pdf/files/'+item+'">\
-					<h3 class="title pdf-title"><i class="fa fa-file-pdf-o"></i> تصفح عدد '+itemname+'</h3>\
-				</a>\
+					<h3 class="title pdf-title"><i class="fa fa-file-pdf-o"></i>\
+						<a href="http://mgovmagazine.com/pdf/files/'+item+'">\
+							تصفح عدد '+itemname+' \
+						</a>\
+					</h3>\
 			</div> '); 
 		}); 
 	});  
 }
 
 function openNews(link , title){
-	//<iframe src="'+link+'" /></iframe>
+	console.log(link);
+	console.log(title);
+	$('#popup_button').trigger('click'); 
 	$('#newsFrame').html('<iframe id="newsShow" src="'+link+'" /></iframe>');
 	$('#newsTitle').html(title);
 }
