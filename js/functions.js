@@ -1,8 +1,6 @@
-function printData(){
-	
-	 
-	//api ="http://mgovmagazine.com/export.php"; 
-	api ="http://localhost/mgov/export2.php"; 
+function printData(){ 
+	api ="http://mgovmagazine.com/export2.php"; 
+	//api ="http://localhost/mgov/export2.php"; 
 	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
 	
 	$.get(api, function(data) {
@@ -28,20 +26,22 @@ function printData(){
 
 function printPDFData(){ 
 
-	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />'); 
-	//api ="http://localhost/test/filenames/index.php"; 
+	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
 	api ="http://mgovmagazine.com/pdf/index.php"; 
+	//api ="http://localhost/test/filenames/index.php"; 
+	
 	$.get(api, function(data) {
 		$('#My_data').html('');
 	    var $xml = data; 
 		obj = JSON && JSON.parse($xml) || $.parseJSON($xml);  
 	    
 		obj.forEach(function(item){  
-			console.log(item); 
+			//console.log(item); 
+			itemname = item.replace(".pdf", "");
 			//$('#My_data').append(item);
 			$('#My_data').append('<div class="content_item">\
-				<a href="'+item+'">\
-					<h3 class="title"> تصفح العدد '+item+'</h3>\
+				<a href="http://mgovmagazine.com/pdf/files/'+item+'">\
+					<h3 class="title pdf-title"><i class="fa fa-file-pdf-o"></i> تصفح عدد '+itemname+'</h3>\
 				</a>\
 			</div> '); 
 		}); 
