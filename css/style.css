@@ -42,8 +42,9 @@ a{
 	text-align:center;
 }
 .logo{
-	width:50%;
+	width: 120px;
 	text-align:center;
+	margin-top: 10px;
 }
 .logo img{
 	max-width:100%;
@@ -106,8 +107,8 @@ a{
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .pdf-title{
-	font-size:20px !important;
-	padding:20px 10px !important ;
+	font-size: 16px !important;
+	padding:20px 10px !important;
 }
 
 .pdf-title i{
