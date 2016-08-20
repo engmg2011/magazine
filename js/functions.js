@@ -1,4 +1,7 @@
-function printData(){ 
+function printData(){
+	
+	//FEED_URL = 'http://www.mgovmagazine.com/component/k2/itemlist?format=feed&amp;type=rss' ;
+
 	api ="http://mgovmagazine.com/export2.php"; 
 	//api ="http://localhost/mgov/export2.php"; 
 	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
@@ -18,7 +21,7 @@ function printData(){
 					</a>\
 				</div>\
 				<a href="#popup" onclick="openNews(\''+item.link[0]+'\' ,\''+item.title[0]+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
-					<h3 class="title">'+item.title[0]+'</h3>\
+						<h3 class="title">'+item.title[0]+'</h3>\
 				</a>\
 				<!--h4 class="description">'+item.title[0]+'</h4-->\
 				<h6 class="time">'+item.pubDate[0]+'</h6>\
