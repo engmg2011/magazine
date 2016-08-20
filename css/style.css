@@ -1,6 +1,7 @@
 body{
 	direction:rtl;
 	background:#d3d3d3;
+	background-color:#d3d3d3 !important;
 }
 body *{
 	font-family:'DroidKufi-Regular';
@@ -10,7 +11,7 @@ body *{
 	margin:0;
 }
 #one{
-	padding-top:60px; 
+	padding-top: 60px;
 }
 .ui-header{
 	position: fixed;
