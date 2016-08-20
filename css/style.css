@@ -43,7 +43,6 @@ a{
 }
 .logo{
 	width: 120px;
-	height:38px;
 	text-align:center;
 	margin-top: 10px;
 }
@@ -114,4 +113,14 @@ a{
 
 .pdf-title i{
 	color:#be9f57;
+}
+#newsShow{
+    height: 85vh;
+    width: 100%;
+}
+#newsTitle{
+	width: 80%;
+	float:right;
+	padding-right:0;
+	margin-right: 10px;
 }
