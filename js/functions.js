@@ -9,13 +9,16 @@ function printData(){
 		obj = JSON && JSON.parse($xml) || $.parseJSON($xml);  
 	    
 		obj.forEach(function(item){  
-			console.log(item.title[0]);
+			//console.log(item.title[0]);
+			console.log(item.link[0]);
 			$('#My_data').append('<div class="content_item">\
 				<div class="img">\
-					<img src="'+item.image[0]+'" />\
+					<a href="#popup" onclick="openNews(\''+item.link[0]+'\' ,\''+item.title[0]+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+						<img src="'+item.image[0]+'" />\
+					</a>\
 				</div>\
-				<a href="'+item.link[0]+'">\
-				<h3 class="title">'+item.title[0]+'</h3>\
+				<a href="#popup" onclick="openNews(\''+item.link[0]+'\' ,\''+item.title[0]+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+					<h3 class="title">'+item.title[0]+'</h3>\
 				</a>\
 				<!--h4 class="description">'+item.title[0]+'</h4-->\
 				<h6 class="time">'+item.pubDate[0]+'</h6>\
@@ -46,6 +49,12 @@ function printPDFData(){
 			</div> '); 
 		}); 
 	});  
+}
+
+function openNews(link , title){
+	//<iframe src="'+link+'" /></iframe>
+	$('#newsFrame').html('<iframe id="newsShow" src="'+link+'" /></iframe>');
+	$('#newsTitle').html(title);
 }
 
 
