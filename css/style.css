@@ -1,7 +1,7 @@
 body{
 	direction:rtl;
 	background:#d3d3d3;
-	background-color:#d3d3d3 !important;
+	background-color:#d3d3d3 !important; 
 }
 body *{
 	font-family:'DroidKufi-Regular';
@@ -11,18 +11,36 @@ body *{
 	margin:0;
 }
 #one{
-	padding-top: 60px;
+	padding-top: 120px;
 }
 .ui-header{
 	position: fixed;
-    margin-top: -60px;
-    width: 100%;
+	margin-top: -120px;
+	width: 100%;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+#one .ui-header{
+    background: #eee url('../res/images/rss/image.jpg') -800px 0 no-repeat;
+    animation:animatedBackground  40s linear infinite;
+    background-size: auto !important;
+}
+@keyframes animatedBackground {
+
+    0%   { background-position: 0 0;}
+    25%  {background-position: 100% 100%; }
+    50%  {background-position: 0% 100%; }
+    75%  {background-position: 100% 0%; }
+    100% {background-position: 0% 0%; }
+     
 }
 a{ 
 	text-decoration:none;
 }
 .ui-header{
 	background:#fff;
+	background-size: 100%;
 }
 .ui-page-theme-a{
 	background:#d3d3d3;
@@ -125,3 +143,64 @@ a{
 	padding-right:0;
 	margin-right: 10px;
 }
+.info{
+	font-size:13px;
+	font-weight: 800;
+	padding:10px;
+	text-align:center;
+	color: #ffffff;
+	text-shadow: 0 0 8px #000;
+}
+.ui-header hr{
+	height:0px;
+	border:0;
+	border-bottom:#D3D3D3 1px solid;
+	margin:0 30px;
+}
+#megamenu{
+	position: fixed;
+	background: rgba(255,255,255,.9);
+	width:80vw;
+	left:auto;
+	right:0;
+	text-align:center;
+	border-left: 0;
+}
+#megamenu img{
+	max-width:100%;
+}
+#megamenu .logo-circle{
+	width:100px;
+	margin:0 auto;
+}
+.sideMenu li{
+	border:#D3D3D3 1px solid;
+	padding: 12px 10px;
+	list-style:none;
+}
+.sideMenu a{
+	color:#666;
+}
+.sideMenu li:after{
+	content: "\f053";
+	position:absolute;
+	left: 15px;
+	font-family:FontAwesome;
+}
+#megamenu .imageSpin{
+	margin:30px 5px;
+	max-width:80px;
+	position:inherit !important;
+	height:auto;
+}
+.sideMenu li.active{
+	background: #b0120f;
+	color:#fff;
+}
+.sideMenu li.active a{ 
+	color:#fff;
+}
+#megamenu .header{ 
+    background:#eee url('../res/images/rss/1.png') 0px no-repeat;
+    background-size: 100%;
+} 
