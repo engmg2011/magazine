@@ -7,13 +7,13 @@ function printData(feeds_url = ''){
 
 	//console.log(api );
 	//api ="http://localhost/mgov/export2.php"; 
-	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
+	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />'+api);
 	
 	$.get(api, function(data) {
 		$('#My_data').html('');
 	    var $xml = data; 
 		obj = JSON && JSON.parse($xml) || $.parseJSON($xml);  
-	    
+	    $('#My_data').append(' Should work ');
 		obj.forEach(function(item){  
 			title = item.title[0];
 			titlefree =  title.replace(/'/g, "");; 
@@ -34,6 +34,7 @@ function printData(feeds_url = ''){
 				<h6 class="time">'+item.pubDate+'</h6>\
 			</div> ');
 		}); 
+	    $('#My_data').append(' must work ');
 	});  
 }
 
@@ -91,5 +92,5 @@ $('.sideMenu>li').click(function(){
 })
 
 $(function(){
-	printData();
+	printData('');
 })
