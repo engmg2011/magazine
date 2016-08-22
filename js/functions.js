@@ -95,5 +95,5 @@ $('.sideMenu>li').click(function(){
 $('#My_data').html('should update 2 ');
 $(function(){
 	$('#My_data').html('should update 3');
-	printData('');
+	//printData('');
 })
