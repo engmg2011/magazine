@@ -81,9 +81,9 @@ function getFeeds(feeds_url_id = '' ){
 	$("#megamenu").animate({width:'toggle'},350); 
 }
  
-$('#My_data').html('should update 1 '); 
-$('#My_data').html('should update 2 ');
 $(function(){
+	$('#My_data').html('should update 1 '); 
+	$('#My_data').html('should update 2 ');
 	$('#My_data').html('should update 3');
 	//printData('');
 })
