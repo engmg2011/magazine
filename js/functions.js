@@ -81,17 +81,7 @@ function getFeeds(feeds_url_id = '' ){
 	$("#megamenu").animate({width:'toggle'},350); 
 }
  
-$('#My_data').html('should update 1 ');
-$('.showHome').click(function(e){   
-	$("#megamenu").animate({width:'toggle'},350);
-})
-$('.sideMenu>li').click(function(){ 
-	catname = $(this).children('a').html();
-	$('.info').html(catname);
-	$('.sideMenu>li').removeClass('active');
-	$(this).addClass('active');
-})
-
+$('#My_data').html('should update 1 '); 
 $('#My_data').html('should update 2 ');
 $(function(){
 	$('#My_data').html('should update 3');
