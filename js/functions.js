@@ -1,13 +1,10 @@
- function printData(feeds_url = ''){ 
+ function printData( ){ 
 	var api ; 
 	if(feeds_url == '')
 		api ="http://mgovmagazine.com/export2.php"; 
 	else
 		api = "http://mgovmagazine.com/export2.php?rss_mod_id="+feeds_url ;
-
-	//console.log(api );
-	//api ="http://localhost/mgov/export2.php"; 
-	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
+ 
 	 
 }
 
