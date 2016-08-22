@@ -17,7 +17,6 @@
     <script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="./js/jquery.mobile-1.4.3.js"></script>
-    <script type="text/javascript" src="./js/functions.js"></script>
     
     <script type="text/javascript" src="cordova.js"></script>
     
@@ -30,19 +29,23 @@
         <div data-role="header">  
         	<table  class="menu" >
 				<tr>
-					<td> 
-			        	<a  href="#My_data" onclick='printData()' class="menu-item ui-btn"><i class="fa fa-bars"></i></a>
+					<td>  
+                        <a href="#" onclick='printPDFData()'  class="  ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-notext"></a>
+			        	<!--a  href="#My_data" onclick='printData()' class="menu-item ui-btn"><i class="fa fa-bars"></i></a-->
 					</td>
 					<td> 
 			            <a class="menu-item " href="javascript:printData();"> 
-                            <img src="logo.jpg" class="logo" style="width:120px;height:39px" />
+                            <img src="logo.png" class="logo" style="width:200px;height:64px" />
                         </a>  
 					</td>
 					<td>
-			        	<a href="#My_data" onclick='printPDFData()'  class="menu-item ui-btn"><i class="fa fa-file-pdf-o "></i></a> 
-					</td>
+                        <a href=""  class="showHome  ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-notext"></a> 
 				</tr>
 			</table>
+            <hr/>
+            <div class="info">
+               تطبيق مجلة الحكومة الذكية بالإمارات العربية المتحدة
+            </div>
         </div><!-- /header -->
 
         <div data-role="content" > 
@@ -90,5 +93,32 @@
         </div><!-- /content -->
  
     </div><!-- /page popup -->
+
+    <!-- Start of second page: #two -->
+    <div data-role="page" id="megamenu"  >
+
+        <div data-role="header" class="header" >
+            <img src="logo-circle.png" class="logo-circle imageSpin" />
+        </div><!-- /header -->
+
+        <div data-role="content" >
+            <ul class="sideMenu"> 
+                <li><a onclick="getFeeds()"> أحدث المواضيع </a></li>
+                <li><a onclick="getFeeds(414)"> أجهزة كمبيوتر </a></li>
+                <li><a onclick="getFeeds(416)"> تكنولوجيا واتصالات </a></li>
+                <li><a onclick="getFeeds(415)"> الهواتف الذكية </a></li>
+                <li><a onclick="getFeeds(417)"> حكومات </a></li>
+                <li><a onclick="getFeeds(418)"> تقارير </a></li>
+                <li><a onclick="getFeeds(419)"> حوارات </a></li>
+                <li><a onclick="getFeeds(420)"> تطبيقات </a></li>
+                <li><a onclick="getFeeds(421)"> حماية وشبكات </a></li>
+                <li><a onclick="getFeeds(422)"> ابتكارات </a></li>
+            </ul>
+        </div><!-- /content -->
+ 
+    </div><!-- /page two -->
+
+
+    <script type="text/javascript" src="./js/functions.js"></script>
 </body>
 </html>
