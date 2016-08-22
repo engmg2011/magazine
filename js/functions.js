@@ -1,4 +1,4 @@
- function printData( ){ 
+ function printData( feeds_url = '' ){ 
 	var api ; 
 	if(feeds_url == '')
 		api ="http://mgovmagazine.com/export2.php"; 
