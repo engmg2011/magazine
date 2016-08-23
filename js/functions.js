@@ -92,5 +92,5 @@ $('.sideMenu>li').click(function(){
 })
 
 $(function(){
-	printData('');
+//	printData('');
 })
