@@ -54,6 +54,9 @@ a{
 	line-height:30px;
 	font-size:18px;	
 }
+#My_data>img{
+	animation:spin 10s infinite ;
+}
 .menu{ 
 	width:100%; 
 } 
@@ -87,9 +90,8 @@ a{
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 .content_item img{
-	width:100%; 
-	animation:spin  10s linear infinite; 
-    
+	width:100%;
+	animation: spin 10s infinite;
 }
 .content_item .title{
 	font-size: 14px;
