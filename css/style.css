@@ -22,8 +22,8 @@ body *{
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 #one .ui-header{
-    background: #eee url('../res/images/rss/image.jpg') -800px 0 no-repeat;
-    animation:animatedBackground  40s linear infinite;
+    background: #eee url('../res/images/rss/image.jpg')  0 no-repeat;
+    /* animation:animatedBackground  40s linear infinite; */
     background-size: auto !important;
 }
 @keyframes animatedBackground {
