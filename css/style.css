@@ -22,7 +22,7 @@ body *{
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 #one .ui-header{
-    background: #eee url('../image.jpg')  0 no-repeat;
+    background: #eee url('../images/image.jpg')  0 no-repeat;
     /* animation:animatedBackground  40s linear infinite; */
     background-size: auto !important;
 }
