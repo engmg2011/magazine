@@ -56,8 +56,11 @@ a{
 	line-height:30px;
 	font-size:18px;	
 }
-#My_data>img{
-	animation:spin 10s infinite ;
+#My_data>img{ 
+	 -webkit-animation: spin 40s linear infinite;
+    -moz-animation: spin 40s linear infinite;
+    animation: spin 40s linear infinite;
+
 }
 .menu{ 
 	width:100%; 
