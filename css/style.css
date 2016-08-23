@@ -23,7 +23,7 @@ body *{
 }
 #one .ui-header{
     background: #eee url('../images/image.jpg')  0 no-repeat;
-    /* animation:animatedBackground  40s linear infinite; */
+    animation:animatedBackground  40s linear infinite; 
     background-size: auto !important;
 }
 @keyframes animatedBackground {
