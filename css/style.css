@@ -88,6 +88,8 @@ a{
 }
 .content_item img{
 	width:100%; 
+	animation:spin  10s linear infinite; 
+    
 }
 .content_item .title{
 	font-size: 14px;
