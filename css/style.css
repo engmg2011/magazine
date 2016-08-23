@@ -56,11 +56,8 @@ a{
 	line-height:30px;
 	font-size:18px;	
 }
-#My_data>img{ 
-	 -webkit-animation: spin 40s linear infinite;
-    -moz-animation: spin 40s linear infinite;
-    animation: spin 40s linear infinite;
-
+#My_data>img{
+	animation:spin 10s infinite ;
 }
 .menu{ 
 	width:100%; 
@@ -213,3 +210,10 @@ a{
     background:#eee url('../images/1.png') 0px no-repeat;
     background-size: 100%;
 } 
+.testAnimatedBack{
+	background:url('http://www.mgovmagazine.com/media/k2/items/cache/f75f45065e491a3adc61e72a384867bb_S.jpg');
+    -webkit-animation: animatedBackground 40s linear infinite;
+    -moz-animation: animatedBackground 40s linear infinite;
+    animation: animatedBackground 40s linear infinite;
+
+}
