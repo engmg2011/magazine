@@ -22,7 +22,7 @@ body *{
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 #one .ui-header{
-    background: #eee url('../images/image.jpg')  0 no-repeat;
+    background: #fff;
     background-size: auto !important;
     -webkit-animation: animatedBackground 40s linear infinite;
     -moz-animation: animatedBackground 40s linear infinite;
@@ -71,12 +71,18 @@ a{
 	max-width:100%;
 	max-height:100%;
 }
-.showHome{
-	margin-left:10px;
+#one .showHome{
+	margin-right:10px; 
 } 
 .ui-header .fa{
-	color: #ffffff;
-	font-size: 20px;  
+	color: #D3D3D3;
+	font-size: 25px;
+	text-shadow: none;
+}
+.ui-header .headerBtn{
+	width:30px;
+	height:30px;
+	margin:0 5px;
 }
 .ui-header .fa:before{     
 	font-weight: 400 !important;
@@ -150,8 +156,8 @@ a{
 	font-weight: 800;
 	padding:10px;
 	text-align:center;
-	color: #ffffff;
-	text-shadow: 0 0 8px #000;
+	color: #d3d3d3;
+	text-shadow: none;
 }
 .ui-header hr{
 	height:0px;
@@ -206,3 +212,51 @@ a{
     background:#eee url('../images/1.png') 0px no-repeat;
     background-size: 100%;
 }  
+#two{
+	position: relative;
+	margin-top: 0;
+	width: 100%;
+	overflow: hidden !important;
+}
+#two .header{ 
+	margin-top: 0; 
+	position: fixed;
+}
+#two img{
+	max-width:100%;
+} 
+#two .ui-content{
+	padding-top:80px;
+	background:#fff;
+}
+#two .ui-content img{
+	width:100%;
+}
+#two .ui-content .title{
+	margin:15px 10px;
+	font-size:14px;
+}
+#two .ui-content .text{
+	margin:15px 10px;
+	font-size:13px;
+	line-height:20px;
+	text-align:justify;
+}
+.return_home{
+	position:absolute;
+	left:5px;
+	top:5px;
+	color:#fff;
+	text-shadow:none;
+	font-size: 20px;
+	text-shadow: 0 0 5px #000;
+}
+.overlay{
+	position:absolute;
+	width:20vw;
+	background: rgba(0,0,0,.6);
+	height: 100vh;
+	top: 0;
+	left: 0;
+	margin-left: -20vw;
+}
