@@ -1,12 +1,15 @@
+var postsData = [] ;
 function printData(feeds_url ){ 
 	var api ; 
-	if(feeds_url == '')
+	if(feeds_url == ''){
 		api ="http://mgovmagazine.com/export2.php"; 
-	else
+		//api ="http://localhost/mgov/export2.php"; 
+	}
+	else{
+		//api = "http://localhost/mgov/export2.php?rss_mod_id="+feeds_url ;
 		api = "http://mgovmagazine.com/export2.php?rss_mod_id="+feeds_url ;
-
-	//console.log(api );
-	//api ="http://localhost/mgov/export2.php"; 
+	}
+ 
 	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
 	
 	$.get(api, function(data) {
@@ -16,11 +19,19 @@ function printData(feeds_url ){
 	    
 		obj.forEach(function(item){  
 			title = item.title[0];
-			titlefree =  title.replace(/'/g, "");; 
-			titlefree =  title.replace(/"/g, "");; 
-			//console.log(titlefree);
-			//console.log(item.link[0]);
-			//console.log(item);
+			titlefree =  title.replace(/'/g, ""); 
+			titlefree =  title.replace(/"/g, "");
+			myContent = item.content[0];
+			console.log(myContent);
+			if (typeof myContent !== 'undefined') {
+				myContent = myContent.replace("." , ". <br>");
+			}
+			postsData.push({
+		        title: item.title[0],
+		        link: item.link[0],
+		        content: myContent,
+		        image: item.image[0]
+		    }); 
 			$('#My_data').append('<div class="content_item">\
 				<div class="img">\
 					<a  onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
@@ -62,20 +73,23 @@ function printPDFData(){
 		}); 
 	});  
 }
-
+ 
 function openNews(link , title){
 	// console.log(link);
-	// console.log(title);
-	$('#popup_button').trigger('click'); 
-	$('#newsFrame').html('<iframe id="newsShow" src="'+link+'" /></iframe>');
-	$('#newsTitle').html(title);
-}
- 
+	console.log(title); 
+	var result = $.grep(postsData, function(e){ return e.link == link; });
+	// console.log(result); 
+	$('#slide_button').trigger('click');  
+	$('#two>.content>.title').html(result[0].title);
+	$('#two>.content>.text').html(result[0].content);
+	$('#two>.content>.image').html(' <img src="'+result[0].image+'" />'); 
+} 
 
 function getFeeds(feeds_url_id  ){  
+	$('.goback').trigger('click');
 	$('#megamenu>.header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat');  
-	$('#one>.ui-header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
-	$('#one>.ui-header').css('background-size','100%'); 
+	//$('#one>.ui-header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
+	//$('#one>.ui-header').css('background-size','100%'); 
 	if(feeds_url_id == "") $('#one>.ui-header').css('background','#eee url("images/image.jpg") 0px no-repeat'); 
 	printData(feeds_url_id);  
 	$("#megamenu").animate({width:'toggle'},350); 
@@ -89,6 +103,12 @@ $('.sideMenu>li').click(function(){
 	$('.info').html(catname);
 	$('.sideMenu>li').removeClass('active');
 	$(this).addClass('active');
+})
+$('.return_home').click(function(){
+	$("#megamenu").animate({width:'toggle'},350);
+})
+$('.overlay').click(function(){
+	$("#megamenu").animate({width:'toggle'},350);
 })
 
 $(function(){
