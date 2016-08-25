@@ -88,8 +88,8 @@ function openNews(link , title){
 function getFeeds(feeds_url_id  ){  
 	$('.goback').trigger('click');
 	$('#megamenu>.header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat');  
-	//$('#one>.ui-header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
-	//$('#one>.ui-header').css('background-size','100%'); 
+	$('#one>.ui-header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
+	$('#one>.ui-header').css('background-size','100%'); 
 	if(feeds_url_id == "") $('#one>.ui-header').css('background','#eee url("images/image.jpg") 0px no-repeat'); 
 	printData(feeds_url_id);  
 	$("#megamenu").animate({width:'toggle'},350); 
