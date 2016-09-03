@@ -22,7 +22,7 @@ function printData(feeds_url ){
 			titlefree =  title.replace(/'/g, ""); 
 			titlefree =  title.replace(/"/g, "");
 			myContent = item.content[0];
-			console.log(myContent);
+
 			if (typeof myContent !== 'undefined') {
 				myContent = myContent.replace("." , ". <br>");
 			}
@@ -55,34 +55,73 @@ function printPDFData(){
 	//api ="http://localhost/test/filenames/index.php"; 
 	
 	$.get(api, function(data) {
-		$('#My_data').html('');
-	    var $xml = data; 
-		obj = JSON && JSON.parse($xml) || $.parseJSON($xml);  
+		$('#My_data').html('');  
 	    
-		obj.forEach(function(item){  
+		for( i=1 ; i<11 ; i++){  
 			//console.log(item); 
-			itemname = item.replace(".pdf", "");
-			//$('#My_data').append(item);
+			titlefree = 'العدد رقم '+i; 
+			//$('#My_data').append(item); 
 			$('#My_data').append('<div class="content_item">\
-					<h3 class="title pdf-title"><i class="fa fa-file-pdf-o"></i>\
-						<a href="http://mgovmagazine.com/pdf/files/'+item+'">\
-							تصفح عدد '+itemname+' \
-						</a>\
-					</h3>\
-			</div> '); 
-		}); 
+				<div class="img">\
+					<a  onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+						<img src="'+item.image[0]+'" />\
+					</a>\
+				</div>\
+				<a onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+						<h3 class="title">'+titlefree+'</h3>\
+				</a>\
+				<h6 class="time">'+item.pubDate+'</h6>\
+			</div> ');
+		} 
 	});  
 }
- 
+
 function openNews(link , title){
-	// console.log(link);
-	console.log(title); 
+	// console.log(link); 
 	var result = $.grep(postsData, function(e){ return e.link == link; });
 	// console.log(result); 
 	$('#slide_button').trigger('click');  
 	$('#two>.content>.title').html(result[0].title);
 	$('#two>.content>.text').html(result[0].content);
 	$('#two>.content>.image').html(' <img src="'+result[0].image+'" />'); 
+} 
+
+function printIssues(){ 
+	var api ;  
+	api ="http://mgovmagazine.com/xml.php"; 
+	//api ="http://localhost/test/xml/issues-xml.php";  
+
+	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
+	
+	$.get(api, function(data) {
+		$('#My_data').html(''); 
+
+		parser = new DOMParser(); 
+		xmlDoc = $.parseXML( data ) 
+		$xml = $( xmlDoc ),
+		issues = $xml.find( "issue" ); 
+		//console.log(issues);
+		issues.each(function(){ 
+		    var id = $(this).find('id').text(),
+		        title = $(this).find('title').text(),
+		        thumb = $(this).find('thumb').text(),
+		        itemlink = $(this).find('itemlink').text();
+		    $('#My_data').append('\
+		    	<div class="issue">\
+		    		<div class="title"><a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"><h3>'+title+'</h3></a></div>\
+		    		<div class="thumb"><a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"><img src="'+thumb+'" /></a></div>\
+		    	</div>');
+			//console.log(title);
+		})
+
+	});  
+}
+ 
+function openIssue(link , title){
+	 $('#popup_button').trigger('click');
+	 title = title ;
+	 $('#issueTitle').html(title);
+	 $('#issueFrame').html('<iframe id="currentIssue" src="'+link+'" ></iframe>');
 } 
 
 function getFeeds(feeds_url_id  ){  
@@ -92,11 +131,20 @@ function getFeeds(feeds_url_id  ){
 	$('#one>.ui-header').css('background-size','100%'); 
 	if(feeds_url_id == "") $('#one>.ui-header').css('background','#eee url("images/image.jpg") 0px no-repeat'); 
 	printData(feeds_url_id);  
-	$("#megamenu").animate({width:'toggle'},350); 
+	megaMenuAction()
+}
+
+function getIssues(){
+	$('.goback').trigger('click');
+	$('#megamenu>.header').css('background','#eee url("images/pdf.jpg") 0px no-repeat');  
+	$('#one>.ui-header').css('background','#eee url("images/pdf.jpg") 0px no-repeat'); 
+	$('#one>.ui-header').css('background-size','100%'); 
+	printIssues();  
+	megaMenuAction() 
 }
  
 $('.showHome').click(function(e){   
-	$("#megamenu").animate({width:'toggle'},350);
+	megaMenuAction();
 })
 $('.sideMenu>li').click(function(){ 
 	catname = $(this).children('a').html();
@@ -105,12 +153,16 @@ $('.sideMenu>li').click(function(){
 	$(this).addClass('active');
 })
 $('.return_home').click(function(){
-	$("#megamenu").animate({width:'toggle'},350);
+	megaMenuAction();
 })
 $('.overlay').click(function(){
-	$("#megamenu").animate({width:'toggle'},350);
+	megaMenuAction();
 })
 
+function megaMenuAction(){
+	$("#megamenu").animate({width:'toggle'},350);
+	$(".ui-content").toggleClass('disable-scrolling'); 
+}
 $(function(){
  	printData('');
 })
