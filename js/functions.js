@@ -2,7 +2,7 @@ var postsData = [] ;
 function printData(feeds_url ){ 
 	var api ; 
 	if(feeds_url == ''){
-		api ="http://mgovmagazine.com/export2.php"; 
+		api ="http://mgovmagazine.com/export2.php?rss_mod_id=424"; 
 		//api ="http://localhost/mgov/export2.php"; 
 	}
 	else{
