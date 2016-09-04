@@ -111,7 +111,7 @@ function printIssues(){
 		    	<div class="issue">\
 		    		<div class="title">\
 		    			<a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"> '+title+' </a>\
-		    			<a href="'+downloadLink+'" download ><img src="images/download.png" class="downloadImg" /> </a>\
+		    			<a onclick="downloadFile(\''+downloadLink+'\')" ><img src="images/download.png" class="downloadImg" /> </a>\
 		    		</div>\
 		    		<div class="thumb"><a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"><img src="'+thumb+'" /></a></div>\
 		    	</div>');
@@ -167,6 +167,32 @@ function megaMenuAction(){
 	$("#megamenu").animate({width:'toggle'},350);
 	$(".ui-content").toggleClass('disable-scrolling'); 
 }
+
+function downloadFile(downloadLink){
+	var fileTransfer = new FileTransfer();
+	var uri = encodeURI(downloadLink);
+
+	fileTransfer.download(
+	    uri,
+	    filePath,
+	    function(entry) {
+	        console.log("download complete: " + entry.fullPath);
+	    },
+	    function(error) {
+	        console.log("download error source " + error.source);
+	        console.log("download error target " + error.target);
+	        console.log("upload error code" + error.code);
+	    },
+	    false,
+	    {
+	        headers: {
+	            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+	        }
+	    }
+	);
+}
+
+
 $(function(){
  	printData('');
 })
