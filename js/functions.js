@@ -105,10 +105,14 @@ function printIssues(){
 		    var id = $(this).find('id').text(),
 		        title = $(this).find('title').text(),
 		        thumb = $(this).find('thumb').text(),
+		        downloadLink = $(this).find('downloadLink').text(),
 		        itemlink = $(this).find('itemlink').text();
 		    $('#My_data').append('\
 		    	<div class="issue">\
-		    		<div class="title"><a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"><h3>'+title+'</h3></a></div>\
+		    		<div class="title">\
+		    			<a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"> '+title+' </a>\
+		    			<a href="'+downloadLink+'" download ><img src="images/download.png" class="downloadImg" /> </a>\
+		    		</div>\
 		    		<div class="thumb"><a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"><img src="'+thumb+'" /></a></div>\
 		    	</div>');
 			//console.log(title);
