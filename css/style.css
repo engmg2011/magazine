@@ -175,6 +175,14 @@ a{
 	border-left: 0;
 	overflow: visible;
 }
+#megamenu .content{
+	height:80vh;
+	overflow-y:scroll;
+}
+#megamenu .content::-webkit-scrollbar { 
+    display:none; 
+    position:absolute;
+}
 #megamenu img{
 	max-width:100%;
 }
@@ -182,22 +190,19 @@ a{
 	width:100px;
 	margin:0 auto;
 }
-.sideMenu{ 
-    height: 400px;
+.sideMenu{
     overflow-y: scroll;
-}
-.sideMenu::-webkit-scrollbar { 
-    display: none; 
 }
 .sideMenu li{
 	border:#D3D3D3 1px solid;
-	padding: 12px 10px;
-	list-style:none; 
+	padding: 8px 10px;
+	list-style:none;
 	position:relative;
 }
 .sideMenu a{
-	color:#666; 
+	color:#666;
 	width: 100%;
+	font-size: 14px;
 }
 .sideMenu li:after{
 	content: "\f053"; 
@@ -218,9 +223,10 @@ a{
 .sideMenu li.active a{ 
 	color:#fff;
 }
-#megamenu .header{ 
+#megamenu .header{
     background:#eee url('../images/1.png') 0px no-repeat;
     background-size: 100%;
+    height: 20vh;
 }  
 #two{
 	position: relative;
