@@ -295,7 +295,8 @@ a{
 	font-size:14px;
 	text-align:right; 
 }
-.issue .title a h3{ 
+.issue .title { 
+	text-align:right;
 }
 .issue .thumb img{
 	width:100%;
@@ -323,4 +324,10 @@ a{
 }
 #frameHeader{
 	height: 6vh;
+}
+.downloadImg{
+	width:15px;
+	float:left;
+	margin-top:10px;
+	margin-left:5px;
 }
