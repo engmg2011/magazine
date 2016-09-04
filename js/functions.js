@@ -111,7 +111,6 @@ function printIssues(){
 		    	<div class="issue">\
 		    		<div class="title">\
 		    			<a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"> '+title+' </a>\
-		    			<a onclick="downloadFile(\''+downloadLink+'\')" ><img src="images/download.png" class="downloadImg" /> </a>\
 		    		</div>\
 		    		<div class="thumb"><a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"><img src="'+thumb+'" /></a></div>\
 		    	</div>');
