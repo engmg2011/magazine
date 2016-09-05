@@ -125,6 +125,7 @@ function openIssue(link , title){
 	 title = title ;
 	 $('#issueTitle').html(title);
 	 $('#issueFrame').html('<iframe id="currentIssue" src="'+link+'" ></iframe>');
+	 showHeaderForAWhile();
 } 
 
 function getFeeds(feeds_url_id  ){  
@@ -189,8 +190,24 @@ function downloadFile(downloadLink){
 	        }
 	    }
 	);
-}
+} 
 
+function showHeaderForAWhile(){
+	$('#frameHeaderInner').slideDown();
+	$('.openClose').slideUp();
+	setTimeout(function(){
+		$('#frameHeaderInner').slideUp('slow');
+		$('.openClose').slideDown('slow');
+	} , 2000);
+} 
+
+$('#frameHeader').click(function(){
+	showHeaderForAWhile();
+});
+
+$('.openClose').click(function(){ 
+	showHeaderForAWhile();
+});
 
 $(function(){
  	printData('');
