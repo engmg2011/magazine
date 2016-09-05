@@ -309,7 +309,7 @@ a{
 	height:240px;
 }
 #currentIssue{
-	height:93vh;
+	height: 100vh;
 	max-height:100%;
 	border:0;
 	width:100%;
@@ -327,13 +327,33 @@ a{
 #issueTitle{
 	width:220px;
 	margin:0 auto;
+	font-size:10px;
+	padding: 6px 5px 6px;
 }
 #frameHeader{
-	height: 6vh;
+	height: auto;
+	position:fixed;
+	width:100%;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	min-height: 20px;
+}
+#frameHeader .logo{
+	margin:0;
+	padding:0;
+	height:42px;
+	width:auto;
+}
+#frameHeader .ui-corner-all{
+	display:none;
 }
 .downloadImg{
 	width:15px;
 	float:left;
 	margin-top:10px;
 	margin-left:5px;
+}
+.openClose{
+	text-align:center;
 }
