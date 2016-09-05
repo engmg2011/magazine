@@ -110,10 +110,28 @@
 
     <!-- Start of third page: #popup -->
     <div data-role="page" id="popup">
-        <div data-role="header" id="frameHeader" >
-            <h1 id='issueTitle'> </h1>
-        </div><!-- /header -->
-
+        <div data-role="header" id="frameHeader" class="ui-header ui-bar-inherit"  >
+            <div  id='frameHeaderInner'> 
+                <table class="menu">
+                    <tr>
+                        <td width="50">  
+                            <a href="" class="showHome  ui-link"><i class="fa fa-bars"></i></a> 
+                        </td>
+                        <td> 
+                            <a class="menu-item  ui-link" href="javascript:printData();"> 
+                                <img src="logo.png" class="logo" >
+                            </a>  
+                        </td>
+                        <td width="50">
+                            <a href="#"  class="return_home "><img src="images/back.jpg" class="headerBtn"></a>
+                        </td> 
+                    </tr>
+                </table>
+                <hr>
+                <h1 id='issueTitle'> </h1> 
+            </div><!-- /header --> 
+            <div class="openClose" style="display:none"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div> 
+        </div>
         <div data-role="content" id='issueFrame' >
             
         </div><!-- /content -->
@@ -128,7 +146,7 @@
             <img src="logo-circle.png" class="logo-circle imageSpin" />
         </div><!-- /header -->
 
-        <div data-role="content" >
+        <div data-role="content" class="content" >
             <ul class="sideMenu"> 
                 <li><a onclick="getFeeds('')"> أحدث المواضيع </a></li>
                 <li><a onclick="getFeeds(414)"> أجهزة كمبيوتر </a></li>
