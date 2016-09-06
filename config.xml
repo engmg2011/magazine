@@ -61,11 +61,7 @@
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
     
-
-    <gap:config-file platform="android" parent="/manifest">
-         <application android:debuggable="false" />
-    </gap:config-file>
-
+ 
     <splash src="splash.png" platform="ios" width="320" height="480" />
 
     <!--
