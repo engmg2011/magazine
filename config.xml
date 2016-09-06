@@ -15,9 +15,9 @@
     
     <content src="index.html" />
 
-    <config-file platform="android" parent="/manifest" mode="merge">
-      <application android:debuggable="false" />
-    </config-file>
+    <gap:config-file platform="android" parent="/manifest">
+        <application android:debuggable="false" />
+    </gap:config-file> 
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
