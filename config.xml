@@ -14,7 +14,7 @@
 
     
     <content src="index.html" />
-
+ 
     <gap:config-file platform="android" parent="/manifest">
         <application android:debuggable="false" />
     </gap:config-file> 
