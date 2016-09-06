@@ -192,12 +192,14 @@ a{
 }
 .sideMenu{
     overflow-y: scroll;
+    background: #fff;
 }
 .sideMenu li{
 	border:#D3D3D3 1px solid;
 	padding: 8px 10px;
 	list-style:none;
 	position:relative;
+	background: #fff;
 }
 .sideMenu a{
 	color:#666;
@@ -356,4 +358,19 @@ a{
 }
 .openClose{
 	text-align:center;
+}
+.ui-dialog-contain{
+	max-width:100%;
+}
+@media (min-width:500px){
+	#one .ui-header{
+		background-size:100% !important;
+	}
+
+	@keyframes animatedBackground { 
+		0%   { background-position: 0 0;} 
+		50%  {background-position: 0% 100%; } 
+		100% {background-position: 0% 0%; }
+
+	}
 }
