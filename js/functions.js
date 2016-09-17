@@ -55,35 +55,7 @@ function printData(feeds_url ){
 	    }
 	});   
 }
-
-function printPDFData(){ 
-
-	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
-	api ="http://mgovmagazine.com/pdf/index.php"; 
-	//api ="http://localhost/test/filenames/index.php"; 
-	
-	$.get(api, function(data) {
-		$('#My_data').html('');  
-	    
-		for( i=1 ; i<11 ; i++){  
-			//console.log(item); 
-			titlefree = 'العدد رقم '+i; 
-			//$('#My_data').append(item); 
-			$('#My_data').append('<div class="content_item">\
-				<div class="img">\
-					<a  onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
-						<img src="'+item.image[0]+'" />\
-					</a>\
-				</div>\
-				<a onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
-						<h3 class="title">'+titlefree+'</h3>\
-				</a>\
-				<h6 class="time">'+item.pubDate+'</h6>\
-			</div> ');
-		} 
-	});  
-}
-
+ 
 function openNews(link , title){
 	// console.log(link); 
 	var result = $.grep(postsData, function(e){ return e.link == link; });
@@ -145,9 +117,9 @@ function openIssue(link , title){
 function getFeeds(feeds_url_id  ){  
 	$('.goback').trigger('click');
 	$('#megamenu>.header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat');  
-	$('#one>.ui-header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
+	$('#one>.ui-header').css('background','#fff url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
 	$('#one>.ui-header').css('background-size','100%'); 
-	if(feeds_url_id == "") $('#one>.ui-header').css('background','#eee url("images/image.jpg") 0px no-repeat'); 
+	if(feeds_url_id == "") $('#one>.ui-header').css('background','#fff url("images/image.jpg") 0px no-repeat'); 
 	printData(feeds_url_id);  
 	megaMenuAction()
 }
@@ -155,7 +127,7 @@ function getFeeds(feeds_url_id  ){
 function getIssues(){
 	$('.goback').trigger('click');
 	$('#megamenu>.header').css('background','#eee url("images/pdf.jpg") 0px no-repeat');  
-	$('#one>.ui-header').css('background','#eee url("images/pdf.jpg") 0px no-repeat'); 
+	$('#one>.ui-header').css('background','#fff url("images/pdf.jpg") 0px no-repeat'); 
 	$('#one>.ui-header').css('background-size','100%'); 
 	printIssues();  
 	megaMenuAction() 
@@ -182,6 +154,7 @@ function megaMenuAction(){
 	$(".ui-content").toggleClass('disable-scrolling'); 
 }
 
+// trying download --not work
 function downloadFile(downloadLink){
 	var fileTransfer = new FileTransfer();
 	var uri = encodeURI(downloadLink);
@@ -205,15 +178,29 @@ function downloadFile(downloadLink){
 	    }
 	);
 } 
-
+// for move up the header but stopped
 function showHeaderForAWhile(){
 	$('#frameHeaderInner').slideDown();
+	/*
 	$('.openClose').slideUp();
 	setTimeout(function(){
 		$('#frameHeaderInner').slideUp('slow');
 		$('.openClose').slideDown('slow');
-	} , 2000);
+	} , 2000);*/
 } 
+function backIssues(){  
+	getIssues();  
+	$("#megamenu").hide();
+}
+// go home not used
+function goHome(feeds_url_id){ 
+	$('.goback').trigger('click');
+	$('#one>.ui-header .info').html('');
+	$('#megamenu>.header').css('background','#fff url("images/'+feeds_url_id+'.jpg") 0px no-repeat');  
+	$('#one>.ui-header').css('background','#fff url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
+	$('#one>.ui-header').css('background-size','100%'); 
+	if(feeds_url_id == "") $('#one>.ui-header').css('background','#fff url("images/image.jpg") 0px no-repeat'); 
+}
 
 $('#frameHeader').click(function(){
 	showHeaderForAWhile();
