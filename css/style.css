@@ -279,7 +279,7 @@ a{
 	margin-left: -20vw;
 	z-index: 9999;
 }
-.disable-scrolling{overflow: hidden !important;max-height: 80vh;}
+.disable-scrolling{overflow: hidden !important;max-height: 100vh;}
 
 .issue{
 	width:50%;
@@ -331,6 +331,7 @@ a{
 	margin:0 auto;
 	font-size:10px;
 	padding: 6px 5px 6px;
+	text-align: center;
 }
 #frameHeader{
 	height: auto;
