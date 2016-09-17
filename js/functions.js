@@ -166,7 +166,7 @@ $('.showHome').click(function(e){
 })
 $('.sideMenu>li').click(function(){ 
 	catname = $(this).children('a').html();
-	$('.info').html(catname);
+	$('.info').html('<hr/>'+catname);
 	$('.sideMenu>li').removeClass('active');
 	$(this).addClass('active');
 })
