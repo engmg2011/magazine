@@ -11,11 +11,10 @@ body *{
 	margin:0;
 }
 #one{
-	padding-top: 120px;
 }
 .ui-header{
-	position: fixed;
-	margin-top: -120px;
+	/* position: fixed; */
+	/* margin-top: -120px; */
 	width: 100%;
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
@@ -154,10 +153,11 @@ a{
 .info{
 	font-size:13px;
 	font-weight: 800;
-	padding:10px;
+	padding: 0 10px;
 	text-align:center;
-	color: #d3d3d3;
-	text-shadow: none;
+	color: #fff;
+	text-shadow: 0 0 2px #000;
+	line-height: 30px; 
 }
 .ui-header hr{
 	height:0px;
