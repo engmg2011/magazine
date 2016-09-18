@@ -51,7 +51,10 @@ function printData(feeds_url ){
 			}); 
 	    },
 	    error: function(res) {
-	        $('#My_data').html("<pre style='direction:ltr'>There was an error: <br/>" + JSON.stringify(res)) +"</pre>"; 
+	       // $('#My_data').html("<pre style='direction:ltr'>There was an error: <br/>" + JSON.stringify(res)) +"</pre>"; 
+	    
+	        $('#My_data').html('<div style="text-align:center"><br/>\
+	        	تأكد من الاتصال بالشبكة ثم اضغط <br/> <a onclick="printData(\'\')" >أعد التحميل</a></div>')
 	    }
 	});   
 }
@@ -59,11 +62,17 @@ function printData(feeds_url ){
 function openNews(link , title){
 	// console.log(link); 
 	var result = $.grep(postsData, function(e){ return e.link == link; });
+	sharing.link = link;
+	sharing.title = title;
+	allContent = result[0].content;
+	sharing.desc = allContent.substr(0, 80);;
+	setShare();
 	// console.log(result); 
 	$('#slide_button').trigger('click');  
 	$('#two>.content>.title').html(result[0].title);
 	$('#two>.content>.text').html(result[0].content);
 	$('#two>.content>.image').html(' <img src="'+result[0].image+'" />'); 
+
 } 
 
 function printIssues(){ 
@@ -119,6 +128,7 @@ function getFeeds(feeds_url_id  ){
 	$('#megamenu>.header').css('background','#eee url("images/'+feeds_url_id+'.jpg") 0px no-repeat');  
 	$('#one>.ui-header').css('background','#fff url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
 	$('#one>.ui-header').css('background-size','100%'); 
+	$('#one>.ui-content').css('padding-top','115px'); 
 	if(feeds_url_id == "") $('#one>.ui-header').css('background','#fff url("images/image.jpg") 0px no-repeat'); 
 	printData(feeds_url_id);  
 	megaMenuAction()
@@ -191,6 +201,7 @@ function showHeaderForAWhile(){
 function backIssues(){  
 	getIssues();  
 	$("#megamenu").hide();
+	$(".ui-content").removeClass('disable-scrolling'); 
 }
 // go home not used
 function goHome(feeds_url_id){ 
@@ -200,6 +211,14 @@ function goHome(feeds_url_id){
 	$('#one>.ui-header').css('background','#fff url("images/'+feeds_url_id+'.jpg") 0px no-repeat'); 
 	$('#one>.ui-header').css('background-size','100%'); 
 	if(feeds_url_id == "") $('#one>.ui-header').css('background','#fff url("images/image.jpg") 0px no-repeat'); 
+}
+
+function share(site){
+	shareFrame = $('#shareFrame');
+	if(site == 'facebook'){
+		shareFrame.show();
+		shareFrame.attr('src','http://facebook.com/sharer.php?u=http://mgovmagazine.com/index.php/govs/item/413-hamdan-bin-mohammed-called-accelerators-future-dubai&pubid=mgeng&ct=1&title=حمدان-بن-محمد-يطلق-مبادرة-مسرعات-دبي&pco=tbxnj-1.0')
+	}
 }
 
 $('#frameHeader').click(function(){
