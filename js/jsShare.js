@@ -4,7 +4,7 @@ console.log(sharing.link);
 function setShare(){ 
     $('#buttons-expanded').html('<div class="inner" style="display: none;"></div>\
         <ul class="shareIcons">\
-            <li><a href="whatsapp://send?text='+window.sharing.link+'" target="_blank" class="ui-link"><img src="images/whatsapp.png" alt="" style="width: 16px; height: 16px; margin-top: 8px;"></a></li>\
+            <li><a onclick="window.location.href=\'whatsapp://send?text='+window.sharing.link+'\'"  class="ui-link"><img src="images/whatsapp.png" alt="" style="width: 16px; height: 16px; margin-top: 8px;"></a></li>\
             <li><a href="http://www.facebook.com/share.php?u='+window.sharing.link+'" title="Share with Facebook" target="_blank" class="ui-link"><img src="images/facebook.png" alt="" style="width: 16px; height: 16px; margin-top: 8px;"></a></li>\
             <li><a href="http://twitter.com/home?status='+window.sharing.title+''+window.sharing.link+'" title="Share with Twitter" target="_blank" class="ui-link"><img src="images/twitter.png" alt="" style="width: 16px; height: 16px; margin-top: 8px;"></a></li>\
             <li><a href="http://delicious.com/save?url='+window.sharing.link+'&amp;amp;title='+window.sharing.title+'" title="Share with Delicious" target="_blank" class="ui-link"><img src="images/delicious.png" alt="" style="width: 16px; height: 16px; margin-top: 8px;"></a></li>\
