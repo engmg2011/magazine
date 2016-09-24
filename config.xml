@@ -92,5 +92,9 @@
     -->
     <gap:platform name="android"/>
     <gap:platform name="ios"/>
+
+    <!-- Wildcards are allowed for the protocol, as a prefix
+         to the host, or as a suffix to the path -->
+    <allow-navigation href="*://*.mgovmagazine.com/*" />
     
 </widget>
