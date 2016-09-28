@@ -139,6 +139,7 @@ function getIssues(){
 	$('#megamenu>.header').css('background','#eee url("images/pdf.jpg") 0px no-repeat');  
 	$('#one>.ui-header').css('background','#fff url("images/pdf.jpg") 0px no-repeat'); 
 	$('#one>.ui-header').css('background-size','100%'); 
+	$('#one>.ui-content').css('padding-top','115px'); 
 	printIssues();  
 	megaMenuAction() 
 }
@@ -230,5 +231,5 @@ $('.openClose').click(function(){
 });
 
 $(function(){
- 	printData('');
+ 	printData(''); 
 })
