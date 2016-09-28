@@ -243,7 +243,7 @@ a{
 	position: fixed;
 }
 #two img{
-	max-width:100%;
+	/* max-width:100%; */
 } 
 #two .ui-content{
 	padding-top:80px;
@@ -395,7 +395,7 @@ a{
 .shareIcons li{
 	display:table-cell;
 	text-align:center;
-	padding: 10px 0;
+	padding: 0;
 }
 li.facebook{
 	background:#3b5998;
@@ -418,4 +418,10 @@ li.mail{
 	height:80vh;
 	top:10vh;
 	background:#eee;
+}
+.zoom{
+	margin-right:10px;
+} 
+.zoom i{
+	margin:0 10px;
 }
