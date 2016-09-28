@@ -6,8 +6,8 @@
     <meta name="description" content="تابع أحدث المواضيع من مجلة الحكومة الذكية"/>
 
     <title>مجلة الحكومة الذكية</title>
-	
-	<icon src="icon.png" ></icon>
+    
+    <icon src="icon.png" ></icon>
  
     <link rel="stylesheet" href="./css/jquery.mobile-1.4.3.css"/>
     <link rel="stylesheet" href="./css/style.css"/>
@@ -30,27 +30,27 @@
     <!-- Start of first page: #one -->
     <div data-role="page" id="one" data-theme="a">
         <div data-role="header" id='mainHeader'>  
-        	<table  class="menu" >
-				<tr>
-					<td width="50">  
+            <table  class="menu" >
+                <tr>
+                    <td width="50">  
                         <a href=""  class="showHome "><i class="fa fa-bars"></i></a> 
-					</td>
-					<td> 
-			            <a class="menu-item " href="javascript:printData();"> 
+                    </td>
+                    <td> 
+                        <a class="menu-item " href="javascript:printData();"> 
                             <img src="logo.png" class="logo" style="width:200px;height:64px" />
                         </a>  
-					</td>
-					<td width="50">
+                    </td>
+                    <td width="50">
                     </td> 
-				</tr>
-			</table> 
+                </tr>
+            </table> 
 
             <div class="info"> 
             </div>
         </div><!-- /header -->
 
         <div data-role="content" > 
-			
+            
             <!-- Show post content -->
             <p style="display:none">
                 <a href="#popup" id="popup_button"  data-transition="slide"  data-role="button" data-rel="dialog"
@@ -99,33 +99,18 @@
             <div class="image">
                 <img src="logo.png" />
             </div>
-            <h3 class="title"></h3> 
-            <div class="text"></div>
+            <h3 class="title"></h3>
 
+            <!-- Zooming text --> 
+            <ul class="zoom">
+                <i class="fa fa-search-plus zoomin"></i>
+                <i class="fa fa-search-minus zoomout"></i>
+            </ul>
+
+            <div class="text"></div> 
         </div><!-- /content -->
         <div data-role="footer" class="footer" > 
-            <div id="buttons-expanded" class="shareContainer"></div>  
-            <!--div class="shareContainer">
-                <ul class="shareIcons">
-                    <li class="facebook">
-                        <a onclick="share('facebook')">
-                            <img src="images/facebook.png">
-                        </a>
-                    </li>
-                    <li class="twitter">
-                        <img src="images/twitter.png">
-                    </li>
-                    <li class="whatsapp">
-                        <img src="images/whatsapp.png">
-                    </li>
-                    <li class="linkedin">
-                        <img src="images/linkedin.png">
-                    </li>
-                    <li class="mail">
-                        <img src="images/mail.png">
-                    </li>
-                </ul>
-            </div-->
+            <div id="buttons-expanded" class="shareContainer"></div>   
         </div>
  
     </div><!-- /page two -->
@@ -189,6 +174,7 @@
 
 
     <script type="text/javascript" src="./js/functions.js"></script> 
+    <script type="text/javascript" src="./js/zoom.js"></script> 
 
 </body>
 </html>
