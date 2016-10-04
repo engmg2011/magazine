@@ -313,11 +313,12 @@ a{
 	height:240px;
 }
 #currentIssue{
-	height: 100vh;
+	height: 95vh;
 	max-height:100%;
 	border:0;
 	width:100%;
 	overflow: hidden;
+	margin-top: 5vh;
 }
 #issueFrame{
 	overflow:hidden;
@@ -424,4 +425,7 @@ li.mail{
 } 
 .zoom i{
 	margin:0 10px;
+}
+#popup .menu{
+	padding-top:10px;
 }
