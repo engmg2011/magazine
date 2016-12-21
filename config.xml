@@ -4,8 +4,8 @@
         xmlns:gap = "http://phonegap.com/ns/1.0" 
         xmlns:android = "http://schemas.android.com/apk/res/android" 
         id        = "mgovmagazine.id"
-        versionCode = "420" 
-        version   = "1.3.0"> 
+        versionCode = "425" 
+        version   = "1.4.0"> 
 
     <name>MGovMagazine</name>
 
