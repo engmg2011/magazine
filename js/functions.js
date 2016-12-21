@@ -2,13 +2,13 @@ var postsData = [] ;
 function printData(feeds_url ){ 
 	var api ; 
 	if(feeds_url == ''){
-		//main feeds
-		api ="http://mgovmagazine.com/export2.php?rss_mod_id=424"; 
-		//api ="http://localhost/mgov/export2.php"; 
+		//main feeds 
+		//api = "http://localhost/mgovnew/feeds";
+		api = "http://mgovmagazine.com/feeds";
 	}
 	else{
-		//api = "http://localhost/mgov/export2.php?rss_mod_id="+feeds_url ;
-		api = "http://mgovmagazine.com/export2.php?rss_mod_id="+feeds_url ;
+		//api = "http://localhost/mgovnew/feeds?cat="+feeds_url ;
+		api = "http://mgovmagazine.com/feeds?cat="+feeds_url ; 
 	}
  
 	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
@@ -16,39 +16,40 @@ function printData(feeds_url ){
 	    type: "GET",
 	    url: api,
 	    success: function (data) {
-
-	        $('#My_data').html('');
+	        $('#My_data').html(''); 
 		    var $xml = data; 
-			obj = JSON && JSON.parse($xml) || $.parseJSON($xml);  
-		    
+		    obj = JSON && JSON.parse($xml) || $.parseJSON($xml);
+			console.log(obj);
+
+
 			obj.forEach(function(item){  
-				title = item.title[0];
+				title = item.title;
 				titlefree =  title.replace(/'/g, ""); 
 				titlefree =  title.replace(/"/g, "");
-				myContent = item.content[0];
+				myContent = item.content;
 
 				if (typeof myContent !== 'undefined') {
 					myContent = myContent.replace("." , ". <br>");
 				}
 				postsData.push({
-			        title: item.title[0],
-			        link: item.link[0],
+			        title: item.title,
+			        link: item.link,
 			        content: myContent,
-			        image: item.image[0]
+			        image: item.image
 			    }); 
 				$('#My_data').append('<div class="content_item">\
 					<div class="img">\
-						<a  onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
-							<img src="'+item.image[0]+'" />\
+						<a  onclick="openNews(\''+item.link+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+							<img src="'+item.image+'" />\
 						</a>\
 					</div>\
-					<a onclick="openNews(\''+item.link[0]+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
+					<a onclick="openNews(\''+item.link+'\' ,\''+titlefree+'\' )" data-role="button" data-rel="dialog" data-transition="pop">\
 							<h3 class="title">'+titlefree+'</h3>\
 					</a>\
 					<!--h4 class="description">'+titlefree+'</h4-->\
 					<h6 class="time">'+item.pubDate+'</h6>\
 				</div> ');
-			}); 
+			});  
 	    },
 	    error: function(res) {
 	       // $('#My_data').html("<pre style='direction:ltr'>There was an error: <br/>" + JSON.stringify(res)) +"</pre>"; 
@@ -77,8 +78,8 @@ function openNews(link , title){
 
 function printIssues(){ 
 	var api ;  
-	api ="http://mgovmagazine.com/xml.php"; 
-	//api ="http://localhost/test/xml/issues-xml.php";  
+	api ="http://mgovmagazine.com/xml.php";  
+	//api ="http://localhost/mgovnew/xml.php";  
 
 	$('#My_data').html('<img src="icon.png" class="waiting-logo imageSpin" />');
 	
@@ -98,7 +99,7 @@ function printIssues(){
 			        thumb = $(this).find('thumb').text(),
 			        downloadLink = $(this).find('downloadLink').text(),
 			        itemlink = $(this).find('itemlink').text();
-			    $('#My_data').append('\
+			    $('#My_data').prepend('\
 			    	<div class="issue">\
 			    		<div class="title">\
 			    			<a onclick="openIssue(\''+itemlink+'\',\''+title+'\')"> '+title+' </a>\
