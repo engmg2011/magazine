@@ -207,12 +207,14 @@ a{
 	color:#666;
 	width: 100%;
 	font-size: 14px;
+	display: block;
 }
 .sideMenu li:after{
-	content: "\f053"; 
+	content: "\f053";
 	left: 15px;
 	position:absolute;
 	font-family:FontAwesome;
+	margin-top: -20px;
 }
 #megamenu .imageSpin{
 	margin:30px 5px;
@@ -284,13 +286,22 @@ a{
 .disable-scrolling{overflow: hidden !important;max-height: 100vh;}
 
 .issue{
-	width:50%;
+	width: calc(50% - 4px);
 	float:right;
 	box-sizing:border-box;
 	margin-top: 5px;
-	height:280px;
 	overflow:hidden;
 	text-align:center;
+	background: #fff;
+	margin: 2px;
+	height: calc(( ( 50vw - 18px ) * 1.29) + 40px);
+} 
+.issue .thumb{
+	border: #d3d3d3 1px solid;
+}
+.issue .thumb a{
+	display: block;
+	height: calc( ( 50vw - 18px ) * 1.29);
 }
 .issue:nth-child(odd){
 	padding-right:8px;
@@ -310,7 +321,7 @@ a{
 }
 .issue .thumb img{
 	width:100%;
-	height:240px;
+	height: calc( ( 50vw - 18px ) * 1.29);
 }
 #currentIssue{
 	height: 95vh;
